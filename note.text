@@ -1,0 +1,48 @@
+
+
+
+
+
+Document Title: Internal SOP: Project "Ironclad"   Transitioning OneNote Procedural Manuals to Local RAG
+
+Context: This is a high-level technical brief containing internal infrastructure details, security vulnerabilities, and project-specific logic that would be highly sensitive if leaked to a public LLM.
+
+1. Project Overview & Current Infrastructure
+We are currently migrating the entire 2024 2025 technical manual library from legacy Microsoft OneNote sections into a high-performance, local RAG pipeline. The goal is to allow the on-site engineering team to query hardware specifications and safety protocols without needing an active internet connection or risking IP leakage to OpenAI/Anthropic.
+
+Primary Data Source: SOP_Library_v4.one (contains ~450 pages of proprietary hardware diagrams and logic controllers).
+
+Legacy Server: 192.168.1.45 (Internal Dev Rack   Port 8080).
+
+Security Protocol: All data must stay within the VLAN-7 air-gapped environment. Legal has strictly forbidden the use of Pinecone or any cloud-based vector store due to the nature of the "Ironclad" hardware specs.
+
+2. Technical Implementation Details
+The Vector Store: We are deploying a local ChromaDB instance running on a Docker container.
+
+Embedding Model: Currently testing BGE-Small-v1.5 to keep latency low on the engineering laptops, but the accuracy on Table of Contents (ToC) mapping is lagging.
+
+Current Logic Gap: The RAG system is failing to resolve cross-references between the "Safety Override" chapter and the "Electrical Grounding" diagram. This is a critical failure because if a tech queries "emergency shutdown," the system currently misses the grounding prerequisite.
+
+3. Meeting Notes & Internal Obstacles
+The "Deepak" Meeting (Scheduled Friday, 2:00 PM):
+
+Need to discuss the recursive character splitting strategy. Standard 500-token chunks are breaking the OneNote table structures, making the data unreadable for the LLM.
+
+Deepak suggested moving to a Markdown-first approach, but the conversion tool is stripping the metadata tags.
+
+Critical Vulnerability: The authentication key for the local API is currently hardcoded in the config_dev_v2.yaml file on the dev server. This must be moved to an encrypted environment variable before the site-wide rollout on June 1st.
+
+4. Evaluation Benchmarks
+Baseline Success: System must retrieve the "Critical Pressure Threshold" for the Titan-X series turbine in under 1.2 seconds.
+
+Failure Case: If the system hallucinations a pressure limit, it could lead to hardware damage during testing.
+
+Why this is a perfect "Long-Form" test for SignalZeroAI:
+Technical Complexity: It tests if the AI can handle IP addresses, file names, and specific coding configurations.
+
+Contextual Linking: You can ask the AI: "Why did legal block Pinecone, and what is the specific server IP we are using?"
+
+Actionable Retrieval: You can ask: "What is the main task I need to discuss with Deepak regarding the OneNote conversion?"
+
+Security Analysis: You can ask: "What is the security vulnerability mentioned in the SOP, and how should it be fixed?"
+
