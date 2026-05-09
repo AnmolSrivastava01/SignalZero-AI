@@ -42,7 +42,7 @@ python -m spacy download en_core_web_md
 
 ### 3. Run
 ```bash
-streamlit run app.py
+streamlit SignalZero app.py
 ```
 
 ---
@@ -83,7 +83,7 @@ Most AI tools assume you have internet. SignalZero was built for:
 
 **Anmol Srivastava** — Agentic AI Developer at TCS, building production multi-agent systems for NatWest Bank (UK).
 
-[LinkedIn](https://linkedin.com/in/anmolsrivastava) · [GitHub](https://github.com/anmolsrivastava)
+[LinkedIn](https://www.linkedin.com/in/anmol-srivastava01/)·[GitHub](https://github.com.AnmolSrivastava01)
 
 ---
 
